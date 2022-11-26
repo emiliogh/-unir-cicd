@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Source') {
             steps {
-                git 'https://github.com/cristina151313/unir-test-1.git'
+                git 'https://github.com/emiliogh/-unir-cicd.git'
             }
         }
         stage('Build') {
@@ -37,7 +37,7 @@ pipeline {
         }
         failure {
             echo 'Error en el pipeline'
-            mail to: 'dianaximena508@gmail.com', body: "<b>Pipeline - ERROR</b><br>Proyecto: ${env.JOB_NAME} <br>N&uacute;mero compilaci&oacute;n: ${env.BUILD_NUMBER} <br> URL de compilaci&oacute;n: ${env.BUILD_URL}", charset: 'UTF-8', mimeType: 'text/html', subject: "ERROR CI: Nombre del proyecto -> ${env.JOB_NAME}";
+            mail to: 'wecardona89@gmail.com', body: "<b>Pipeline - ERROR</b><br>Proyecto: ${env.JOB_NAME} <br>N&uacute;mero compilaci&oacute;n: ${env.BUILD_NUMBER} <br> URL de compilaci&oacute;n: ${env.BUILD_URL}", charset: 'UTF-8', mimeType: 'text/html', subject: "ERROR CI: Nombre del proyecto -> ${env.JOB_NAME}";
         }
     }
 }
